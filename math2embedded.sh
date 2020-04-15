@@ -51,7 +51,7 @@ inkscape -l "$dir/pic.svg" "$dir/pic-crop.pdf" || exit 4
 # and paste it to the clipboard
 imgdata="$(base64 "$dir/pic.svg")"
 [ -n "$imgdata" ] || exit 5
-printf "data:image/svg+xml;base64,%s" "$imgdata" | xsel -b -i
+printf "![img](data:image/svg+xml;base64,%s)" "$imgdata" | xsel -b -i
 
 echo
 echo "Image data has been pasted to clipboard"
